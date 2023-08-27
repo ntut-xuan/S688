@@ -36,6 +36,7 @@ def load_swagger_component(swagger_data: dict[str, Any], component_type: Compone
 
     for component_name, value in swagger_data["components"][component_type_string].items():
         schema_component_dict |= {f'#/components/{component_type_string}/{component_name}': value}
-        logger.info(f"Load Swagger {component_type_string} component: #/components/{component_type_string}/{component_name}")
+        logger.debug(f"Load Swagger {component_type_string} component: #/components/{component_type_string}/{component_name}")
 
+    logger.info(f"Load {len(schema_component_dict.keys())} {component_type_string} components")
     return schema_component_dict
