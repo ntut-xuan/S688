@@ -6,26 +6,9 @@ from typing import Any
 
 from loguru import logger
 
-from loader import ComponentType, load_swagger_component, load_swagger_file
 from flator import flat
-
-@dataclass
-class Route:
-    method: HTTPMethod
-    path: str
-    request_payload: dict[str, Any] | None = None
-    response_payload: dict[str, Any] | None = None
-
-
-def fetch_route(swagger_flat_data: dict[str, Any]):
-    paths: dict[str, dict[str, Any]] = swagger_flat_data["paths"]
-    routes: list[Route] = []
-
-    for path_name, path_object in paths.items():
-        for key, value in path_object.items():
-            logger.debug(f"Fetch route {key.upper():8s} {path_name}")
-            routes.append(Route(method=HTTPMethod(key.upper()), path=path_name))
-    logger.info(f"Fetch {len(routes)} routes.")
+from loader import ComponentType, load_swagger_component, load_swagger_file
+from route import Route, fetch_route
 
 
 def setup_loguru_format() -> None:
@@ -41,4 +24,4 @@ if __name__ == "__main__":
     response_components: dict[str, Any] = load_swagger_component(swagger_data, ComponentType.RESPONSE)
     swagger_flat_data = flat(swagger_data, schema_components, response_components)
 
-    fetch_route(swagger_flat_data)
+    route: Route = fetch_route(swagger_flat_data)
