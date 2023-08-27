@@ -18,9 +18,11 @@ S688 is a validation tool written in Python that verifies whether Swagger route 
   - [x] Create a new GitHub repository.
   - [x] Set up the initial project structure.
 
-- [ ] **Environment Setup**
-  - [ ] Choose a virtual environment tool (e.g., `virtualenv`, `conda`) and set it up.
-  - [ ] Install required dependencies specified in `requirements.txt`.
+- [x] **Environment Setup**
+  - [x] Install required dependencies specified in `requirements.txt`.
+
+- [x] **.gitignore File**
+  - [x] Create a `.gitignore` file to exclude unnecessary files from version control.
 
 - [x] **Basic README.md**
   - [x] Create a comprehensive README.md with project overview, features, and usage instructions.
