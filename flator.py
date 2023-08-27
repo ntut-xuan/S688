@@ -15,11 +15,11 @@ def flat(swagger_data: dict[str, Any], schemas: dict[str, Any], responses: dict[
 def _flat_ref_key(data: dict[str, Any], schemas: dict[str, Any], responses: dict[str, Any]) -> None:
     components: dict[str, Any] = {**schemas, **responses}
 
-    for value in data.items():
+    for _, value in data.items():
         if isinstance(value, dict):
             _flat_ref_key(value, schemas, responses)
 
-    if "$ref" in data:
+    if "$ref" in data.keys():
         ref_path: str = data["$ref"]
         ref_json_object: dict[str, Any] = components[ref_path]
         del data["$ref"]
