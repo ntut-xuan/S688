@@ -47,17 +47,17 @@ S688 is a validation tool written in Python that verifies whether Swagger route 
 
 ### Phase 3: Application CLI and Command Processing
 
-- [ ] **Command-line Interface (CLI)**
-  - [ ] Develop a user-friendly CLI for the application.
-  - [ ] Implement CLI commands for processing Swagger JSON.
+- [x] **Command-line Interface (CLI)**
+  - [x] Develop a user-friendly CLI for the application.
+  - [x] Implement CLI commands for processing Swagger JSON.
 
-- [ ] **Command Processing Logic**
-  - [ ] Enhance the application to read and process Swagger JSON files.
-  - [ ] Implement logic to flatten Swagger JSON, expanding `$ref` references.
+- [x] **Command Processing Logic**
+  - [x] Enhance the application to read and process Swagger JSON files.
+  - [x] Implement logic to flatten Swagger JSON, expanding `$ref` references.
 
-- [ ] **Interactive Feedback**
-  - [ ] Provide clear and informative feedback during command execution.
-  - [ ] Display results and messages directly within the CLI.
+- [x] **Interactive Feedback**
+  - [x] Provide clear and informative feedback during command execution.
+  - [x] Display results and messages directly within the CLI.
 
 ### Phase 4: Assertion Class for Payload Validation
 
