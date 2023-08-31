@@ -7,9 +7,9 @@ from typing import Any
 import click
 from loguru import logger
 
-import flator
-from loader import ComponentType, load_swagger_component, load_swagger_file
-from route import Route, fetch_route
+import core.flator as flator
+from core.loader import ComponentType, load_swagger_component, load_swagger_file
+from core.route import Route, fetch_route
 
 
 def setup_loguru_format() -> None:
